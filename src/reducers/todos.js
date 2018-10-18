@@ -21,7 +21,7 @@ export const initialState = [
   {
     type: types.EASY,
     text: `2. 10 min - 80 LH / 40 denies safelane.
-Creeps can't enter either team's tower. if they do you reset`,
+  - Creeps can't enter either team's tower. if they do you reset`,
     completed: false,
     id: 2
   },
@@ -39,7 +39,7 @@ Creeps can't enter either team's tower. if they do you reset`,
   },
   {
     type: types.EASY,
-    text: '5. less than 10 min - end the game (destroy enemy ancient)',
+    text: '5. <10 min - end the game (destroy enemy ancient)',
     completed: false,
     id: 5
   },
@@ -60,22 +60,22 @@ Creeps can't enter either team's tower. if they do you reset`,
   {
     type: types.ADVANCED,
     text: `2. 30 min - 900 LH
-  No meepo.`,
+    - No meepo.`,
     completed: false,
     id: 8
   },
   {
     type: types.ADVANCED,
     text: `3. 10 min - 100+ CS (LH+DN counts) as morphling
-  -> lvl 1 strength morph and never level anything again, turn it on and don't turn it off.
-  Buy a branch, a faerie and a wraith band.
-  You'll constantly have only ~25 damage.`,
+    - lvl 1 strength morph and never level anything again, turn it on and don't turn it off.
+    - Buy a branch, a faerie and a wraith band.
+    - You'll constantly have only ~25 damage.`,
     completed: false,
     id: 9
   },
   {
     type: types.ADVANCED,
-    text: '4. less than 8 min - end the game (destroy enemy ancient)',
+    text: '4. <8 min - end the game (destroy enemy ancient)',
     completed: false,
     id: 10
   },
@@ -102,22 +102,22 @@ Creeps can't enter either team's tower. if they do you reset`,
   {
     type: types.SUPERADVANCED,
     text: `3. 10 min - 120+ CS (LH+DN counts) as morphling
-  -> lvl 1 strength morph and never level anything again, turn it on and don't turn it off. 
-  Buy a branch, a faerie and a wraith band.
-  You'll constantly have only ~25 damage.`,
+    - lvl 1 strength morph and never level anything again, turn it on and don't turn it off. 
+    - Buy a branch, a faerie and a wraith band.
+    - You'll constantly have only ~25 damage.`,
     completed: false,
     id: 14
   },
   {
     type: types.SUPERADVANCED,
-    text: "4. less than 6 min - end the game (destroy enemy ancient)",
+    text: "4. <6 min - end the game (destroy enemy ancient)",
     completed: false,
     id: 15
   },
   {
     type: types.SUPERADVANCED,
     text: `5. 3600 score in last hit trainer, 2 times in a row.
-No tiny, shaman, tree.`,
+    - No tiny, shaman, tree.`,
     completed: false,
     id: 16
   },
@@ -128,6 +128,7 @@ No tiny, shaman, tree.`,
 export default function todos(state = initialState, action) {
   switch (action.type) {
     case RESET:
+      localStorage.clear();
       return initialState
     case COMPLETE_TODO:
       return state.map(todo =>
